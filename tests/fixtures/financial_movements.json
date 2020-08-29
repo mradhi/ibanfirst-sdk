@@ -1,0 +1,75 @@
+{
+  "list": {
+    "method": "GET",
+    "path": "/financialMovements/",
+    "body": {
+      "financialMovements": [
+        {
+          "id": "MTE0OTQ4Mg",
+          "bookingDate": "2019-09-02",
+          "valueDate": "2019-09-02",
+          "walletId": "NDgyODM",
+          "amount": {
+            "value": "-364.80",
+            "currency": "EUR"
+          },
+          "description": "a085677f370c890 - Buy\/sell currencies"
+        },
+        {
+          "id": "MTE0OTQ4Mw",
+          "bookingDate": "2019-09-02",
+          "valueDate": "2019-09-02",
+          "walletId": "NDgyODY",
+          "amount": {
+            "value": "400.00",
+            "currency": "USD"
+          },
+          "description": "a085677f370c890   BE - Buy\/sell currencies"
+        },
+        {
+          "id": "MTE0OTQ4NA",
+          "bookingDate": "2019-09-02",
+          "valueDate": "2019-09-02",
+          "walletId": "NDgyODM",
+          "amount": {
+            "value": "-4664.42",
+            "currency": "EUR"
+          },
+          "description": "a085677f370c890 - Buy\/sell currencies"
+        }
+      ]
+    }
+  },
+  "details": {
+    "method": "GET",
+    "path": "/financialMovements/-MTE0OTQ4NA",
+    "body": {
+      "financialMovement": {
+        "id": "MTE0OTQ4NA",
+        "walletId": "NDgyODM",
+        "bookingDate": "2019-09-02",
+        "valueDate": "2019-09-02",
+        "orderingAccountNumber": "BE15914000011530",
+        "beneficiaryAccountNumber": "BE79914000011833",
+        "orderingCustomer": "a085677f370c890   ",
+        "orderingInstitution": "FXBBBEBBXXX IBANFIRST AVENUE LOUISE 350   1050 BRUSSELS BE",
+        "beneficiaryCustomer": "a085677f370c890",
+        "beneficiaryInstitution": "FXBBBEBBXXX IBANFIRST AVENUE LOUISE 350   1050 BRUSSELS BE",
+        "orderingAmount": {
+          "value": "4664.42",
+          "currency": "EUR"
+        },
+        "beneficiaryAmount": {
+          "value": "5115.00",
+          "currency": "USD"
+        },
+        "remittanceInformation": "da39a3ee5e6b4b0da39a3ee5e6b4b0",
+        "chargesDetails": null,
+        "exchangeRate": "1.0966000",
+        "typeLabel": "DebitForExchange",
+        "internalReference": "#190902-17-413",
+        "description": "Buy\/sell currencies"
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "list": {
+    "method": "GET",
+    "path": "/wallets/",
+    "body": {
+      "wallets": [
+        {
+          "id": "NDgyODM",
+          "tag": "86f7e437faa5a7f",
+          "currency": "EUR",
+          "bookingAmount": {
+            "value": "57.85",
+            "currency": "EUR"
+          },
+          "valueAmount": {
+            "value": "57.85",
+            "currency": "EUR"
+          },
+          "dateLastFinancialMovement": "2020-04-02 15:25:51"
+        },
+        {
+          "id": "NDgyODY",
+          "tag": "86f7e437faa5a7f",
+          "currency": "USD",
+          "bookingAmount": {
+            "value": "50002.75",
+            "currency": "USD"
+          },
+          "valueAmount": {
+            "value": "50002.75",
+            "currency": "USD"
+          },
+          "dateLastFinancialMovement": "2020-04-09 08:57:56"
+        },
+        {
+          "id": "NDg2MDc",
+          "tag": "86f7e437faa5a7f",
+          "currency": "JPY",
+          "bookingAmount": {
+            "value": "0",
+            "currency": "JPY"
+          },
+          "valueAmount": {
+            "value": "0",
+            "currency": "JPY"
+          },
+          "dateLastFinancialMovement": "2020-03-30 16:53:09"
+        }
+      ]
+    }
+  },
+  "details": {
+    "method": "GET",
+    "path": "/wallets/-NDgyODM",
+    "body": {
+      "wallet": {
+        "id": "NDgyODM",
+        "currency": "EUR",
+        "tag": "86f7e437faa5a7f",
+        "status": "authorized",
+        "accountNumber": "BE15914000011530",
+        "correspondentBank": {
+          "bic": "BBRUBEBBXXX",
+          "name": "ING BELGIUM NV\/SA (FORMERLY BANK BRUSSELS LAMBERT SA), BRUSSELS",
+          "address": {
+            "street": "AVENUE MARNIX 24  ",
+            "postCode": "1000",
+            "city": "BRUSSELS",
+            "province": null,
+            "country": "BE"
+          }
+        },
+        "holderBank": {
+          "bic": "FXBBBEBBXXX",
+          "clearingCodeType": "",
+          "clearingCode": "914",
+          "name": "IBANFIRST",
+          "address": {
+            "street": "AVENUE LOUISE 350  ",
+            "postCode": "1050",
+            "city": "BRUSSELS",
+            "province": null,
+            "country": "BE"
+          }
+        },
+        "holder": {
+          "name": "client17",
+          "type": "corporate",
+          "address": {
+            "street": "c432ea709674a3e",
+            "postCode": "ec883",
+            "city": "b58f5927b6",
+            "province": null,
+            "country": "BE"
+          }
+        }
+      }
+    }
+  }
+}

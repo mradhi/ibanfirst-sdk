@@ -1,0 +1,43 @@
+{
+    "name": "mradhi/ibanfirst-sdk",
+    "description": "iBanFirst PHP Client Library",
+    "version": "1.0.0",
+    "keywords": [
+        "ibanfirst",
+        "finance",
+        "api"
+    ],
+    "homepage": "https://ibanfirst.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Radhi Guennichi",
+            "email": "guennichiradhi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "symfony/http-client": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "IBanFirst\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IBanFirst\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

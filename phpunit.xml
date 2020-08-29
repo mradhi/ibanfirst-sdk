@@ -1,0 +1,20 @@
+<!--
+  ~ This file is part of the iBanFirst HTTP Client package.
+  ~
+  ~ (c) Radhi GUENNICHI <guennichiradhi@gmail.com> <+216 50 711 816>
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  -->
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         stderr="true">
+    <testsuites>
+        <testsuite name="iBanFirst">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

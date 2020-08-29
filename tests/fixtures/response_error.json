@@ -1,0 +1,7 @@
+{
+  "Error": {
+    "ErrorCode": 15,
+    "ErrorType": "Unauthorized",
+    "ErrorMessage": "You must use the WSSE secured authentication to access this resource."
+  }
+}
