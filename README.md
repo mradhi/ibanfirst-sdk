@@ -121,13 +121,7 @@ When there is an error, the library will return a corresponding subclass of
 - `IBanFirst\Exception\ResourceException` - The call to a given resource is invalid
 - `IBanFirst\Exception\ResponseException` - The response returned by the API is an error
 
-## Supporting PHP >= 7.4
-
-This client library only supports the latest version PHP >= 7.4 , Check [Supported Versions](https://www.php.net/supported-versions.php)
-for more information.
-
-
-## Tests
+### Tests
 
 1. Create a sandbox account on iBanFirst, check [iBanFirst API - Get started](https://api.ibanfirst.com/APIDocumentation/IbanfirstAPI/)
 2. Create `tests/config.php` from `tests/config.php.dist` and edit it to add your credentials.
@@ -173,3 +167,8 @@ that we can easily add more authenticators by just implementing the interface `I
 We can easily add more services to this wrapper, each service should extend `IBanFirst\Service\AbstractService` class, 
 and the return value for each public method call should be an instance of `IBanFirst\Response\ListResponse`
 or `IBanFirst\Resources\AbstractResource`, this is so useful to ensure a great typehint.
+
+## Supporting PHP >= 7.4
+
+This client library only supports the latest version PHP >= 7.4 , Check [Supported Versions](https://www.php.net/supported-versions.php)
+for more information.
