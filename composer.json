@@ -27,13 +27,13 @@
             "IBanFirst\\": "lib/"
         }
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
     "autoload-dev": {
         "psr-4": {
             "IBanFirst\\": "tests/"
         }
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
     },
     "extra": {
         "branch-alias": {
