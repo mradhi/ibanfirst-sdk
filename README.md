@@ -1,5 +1,7 @@
 # iBanFirst PHP client library
 
+[![Build Status](https://travis-ci.org/mradhi/ibanfirst-sdk.svg?branch=master)](https://travis-ci.org/mradhi/ibanfirst-sdk)
+
 A PHP client for interacting with the iBanFirst API.
 
 - [Guide](https://api.ibanfirst.com/APIDocumentation/IbanfirstAPI/)
