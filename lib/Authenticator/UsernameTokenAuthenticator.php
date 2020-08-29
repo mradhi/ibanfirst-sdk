@@ -30,33 +30,6 @@ class UsernameTokenAuthenticator implements AuthenticatorInterface
     }
 
     /**
-     * This method should throws an exception
-     * if there are some missing configs for this authenticator.
-     *
-     * @param array $config
-     *
-     * @throws AuthenticatorException
-     */
-    private function validateConfig(array $config): void
-    {
-        $requiredKeys = ['username', 'password'];
-
-        foreach ($requiredKeys as $requiredKey) {
-            if (!isset($config[$requiredKey])) {
-                throw new AuthenticatorException(
-                    sprintf('Missing required option "%s".', $requiredKey)
-                );
-            }
-
-            if (!is_string($config[$requiredKey])) {
-                throw new AuthenticatorException(
-                    sprintf('Option "%s" can only be a string, "%s" given.', $requiredKey, gettype($config[$requiredKey]))
-                );
-            }
-        }
-    }
-
-    /**
      * @inheritDoc
      */
     public function authenticate(RequestInterface $request): RequestInterface
@@ -83,5 +56,32 @@ class UsernameTokenAuthenticator implements AuthenticatorInterface
         $request->replaceHeaders(['X-WSSE' => $wsse]);
 
         return $request;
+    }
+
+    /**
+     * This method should throws an exception
+     * if there are some missing configs for this authenticator.
+     *
+     * @param array $config
+     *
+     * @throws AuthenticatorException
+     */
+    private function validateConfig(array $config): void
+    {
+        $requiredKeys = ['username', 'password'];
+
+        foreach ($requiredKeys as $requiredKey) {
+            if (!isset($config[$requiredKey])) {
+                throw new AuthenticatorException(
+                    sprintf('Missing required option "%s".', $requiredKey)
+                );
+            }
+
+            if (!is_string($config[$requiredKey])) {
+                throw new AuthenticatorException(
+                    sprintf('Option "%s" can only be a string, "%s" given.', $requiredKey, gettype($config[$requiredKey]))
+                );
+            }
+        }
     }
 }
