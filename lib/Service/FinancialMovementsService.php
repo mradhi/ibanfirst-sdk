@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace IBanFirst\Service;
 
+use IBanFirst\Exception\ResponseException;
 use IBanFirst\Request\Request;
 use IBanFirst\Resources\AbstractResource;
 use IBanFirst\Resources\FinancialMovements;
@@ -26,6 +27,8 @@ class FinancialMovementsService extends AbstractService
      * @param array $params
      *
      * @return ListResponse
+     *
+     * @throws ResponseException
      */
     public function getList(array $params = []): ListResponse
     {
@@ -43,6 +46,8 @@ class FinancialMovementsService extends AbstractService
      * @param array  $params
      *
      * @return AbstractResource|FinancialMovementsDetails
+     *
+     * @throws ResponseException
      */
     public function getDetails(string $id, array $params = [])
     {
