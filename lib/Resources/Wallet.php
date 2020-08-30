@@ -15,6 +15,7 @@ namespace IBanFirst\Resources;
 /**
  * @property-read        $id
  * @property-read        $tag
+ * @property-read        $currency
  * @property-read Amount $bookingAmount
  * @property-read Amount $valueAmount
  * @property-read        $dateLastFinancialMovement
