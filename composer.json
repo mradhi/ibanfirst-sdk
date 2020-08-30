@@ -1,7 +1,6 @@
 {
     "name": "mradhi/ibanfirst-sdk",
     "description": "iBanFirst PHP Client Library",
-    "version": "1.0.0",
     "keywords": [
         "ibanfirst",
         "finance",
