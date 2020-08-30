@@ -86,4 +86,16 @@ abstract class AbstractResource
 
         return $this->{$field};
     }
+
+    /**
+     * Companion to the Magic getter.
+     *
+     * @param string $field the name of the field we're accessing
+     *
+     * @return bool
+     */
+    public function __isset(string $field)
+    {
+        return property_exists(get_class($this), $field);
+    }
 }
