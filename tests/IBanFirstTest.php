@@ -15,6 +15,8 @@ namespace IBanFirst;
 use IBanFirst\Exception\SDKException;
 use IBanFirst\Service\WalletsService;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\HttpClient\MockHttpClient;
 
 class IBanFirstTest extends TestCase
 {
@@ -40,5 +42,21 @@ class IBanFirstTest extends TestCase
 
         $this->assertNotNull($iBanFirst);
         $this->assertInstanceOf(WalletsService::class, $iBanFirst->wallets());
+    }
+
+    public function testCanChangeHttpClient(): void
+    {
+        $httpClient = HttpClient::create();
+
+        $iBanFirst = new IBanFirst(['environment' => 'sandbox', 'username' => 'foo', 'password' => 'bar', 'http_client' => $httpClient]);
+
+        $this->assertEquals($httpClient, $iBanFirst->getHttpClient());
+
+        // Try to change the http client
+        $mockHttpClient = new MockHttpClient();
+
+        $iBanFirst->setHttpClient($mockHttpClient);
+
+        $this->assertEquals($mockHttpClient, $iBanFirst->getHttpClient());
     }
 }

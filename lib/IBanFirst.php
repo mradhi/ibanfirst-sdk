@@ -35,7 +35,7 @@ class IBanFirst
 
     protected array $config;
 
-    private IBanFirstHttpClient $httpClient;
+    private IBanFirstHttpClient $iBanFirstHttpClient;
 
     public function __construct(array $config = [])
     {
@@ -48,13 +48,51 @@ class IBanFirst
         $this->validateConfig($config);
 
         // Build the HTTP client with the authenticator
-        $this->httpClient = new IBanFirstHttpClient(
+        $this->iBanFirstHttpClient = new IBanFirstHttpClient(
             $this->getBaseURL($config['environment']),
             $config['http_client'],
             $this->getAuthenticator($config)
         );
 
         $this->config = $config;
+    }
+
+    /**
+     * Service for interacting with /wallets/ endpoints.
+     *
+     * @return WalletsService
+     */
+    public function wallets(): WalletsService
+    {
+        if (!isset($this->wallets)) {
+            $this->wallets = new WalletsService($this->iBanFirstHttpClient);
+        }
+
+        return $this->wallets;
+    }
+
+    /**
+     * Service for interacting with /financialMovements/ endpoints.
+     *
+     * @return FinancialMovementsService
+     */
+    public function financialMovements(): FinancialMovementsService
+    {
+        if (!isset($this->financialMovements)) {
+            $this->financialMovements = new FinancialMovementsService($this->iBanFirstHttpClient);
+        }
+
+        return $this->financialMovements;
+    }
+
+    public function setHttpClient(HttpClientInterface $httpClient): void
+    {
+        $this->iBanFirstHttpClient->setBaseHttpClient($httpClient);
+    }
+
+    public function getHttpClient(): HttpClientInterface
+    {
+        return $this->iBanFirstHttpClient->getBaseHttpClient();
     }
 
     /**
@@ -126,33 +164,5 @@ class IBanFirst
         }
 
         return $this->authenticator;
-    }
-
-    /**
-     * Service for interacting with /wallets/ endpoints.
-     *
-     * @return WalletsService
-     */
-    public function wallets(): WalletsService
-    {
-        if (!isset($this->wallets)) {
-            $this->wallets = new WalletsService($this->httpClient);
-        }
-
-        return $this->wallets;
-    }
-
-    /**
-     * Service for interacting with /financialMovements/ endpoints.
-     *
-     * @return FinancialMovementsService
-     */
-    public function financialMovements(): FinancialMovementsService
-    {
-        if (!isset($this->financialMovements)) {
-            $this->financialMovements = new FinancialMovementsService($this->httpClient);
-        }
-
-        return $this->financialMovements;
     }
 }

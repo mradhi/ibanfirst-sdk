@@ -64,4 +64,14 @@ class IBanFirstHttpClient
             $statusCode
         );
     }
+
+    public function setBaseHttpClient(BaseHttpClientInterface $baseHttpClient): void
+    {
+        $this->baseHttpClient = $baseHttpClient;
+    }
+
+    public function getBaseHttpClient(): BaseHttpClientInterface
+    {
+        return $this->baseHttpClient;
+    }
 }
