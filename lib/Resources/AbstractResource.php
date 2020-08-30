@@ -41,6 +41,16 @@ abstract class AbstractResource
         }
     }
 
+    /**
+     * Returns the resource as array.
+     *
+     * @return array
+     */
+    public function getData(): array
+    {
+        return $this->data;
+    }
+
     private function castValue(string $key, $value)
     {
         if (array_key_exists($key, $this->map)) {

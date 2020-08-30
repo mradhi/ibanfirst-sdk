@@ -62,4 +62,11 @@ class ResourceTest extends TestCase
 
         $this->assertEquals('Radhi', $resource->sub->name);
     }
+
+    public function testItReturnsResourceAsArray(): void
+    {
+        $resource = new FakeResource($expectedArray = ['sub' => ['name' => 'Radhi', 'age' => 25]]);
+
+        $this->assertEquals($expectedArray, $resource->getData());
+    }
 }

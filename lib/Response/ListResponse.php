@@ -21,6 +21,8 @@ class ListResponse
 
     protected ResponseInterface $response;
 
+    protected array $data;
+
     /**
      * Creates a new list response of the same resource class and decodes
      * the array from the raw response.
@@ -36,6 +38,8 @@ class ListResponse
         foreach ($unenvelopedBody as $item) {
             $this->records[] = new $resourceClass($item);
         }
+
+        $this->data = $unenvelopedBody;
     }
 
     /**
@@ -49,5 +53,15 @@ class ListResponse
     public function getResponse(): ResponseInterface
     {
         return $this->response;
+    }
+
+    /**
+     * Key value array data representation of the list.
+     *
+     * @return array
+     */
+    public function getData(): array
+    {
+        return $this->data;
     }
 }
